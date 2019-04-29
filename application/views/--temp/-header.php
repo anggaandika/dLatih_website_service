@@ -26,25 +26,32 @@
 
 <body class="bg-gradient-primary">
 
-    <?php else : ?>
+    <?php elseif ($this->uri->segment(1) == "er") : ?>
+
 
     <body id="page-top">
 
         <!-- Page Wrapper -->
         <div id="wrapper">
+            <?php else : ?>
 
-            <!-- Sidebar -->
-            <?php $this->load->view("--temp/-prop/-sidebar"); ?>
-            <!-- End of Sidebar -->
+            <body id="page-top">
 
-            <!-- Content Wrapper -->
-            <div id="content-wrapper" class="d-flex flex-column">
+                <!-- Page Wrapper -->
+                <div id="wrapper">
 
-                <!-- Main Content -->
-                <div id="content">
+                    <!-- Sidebar -->
+                    <?php $this->load->view("--temp/-prop/-sidebar"); ?>
+                    <!-- End of Sidebar -->
 
-                    <!-- Topbar -->
-                    <?php $this->load->view("--temp/-prop/-topbar"); ?>
-                    <!-- End of Topbar -->
+                    <!-- Content Wrapper -->
+                    <div id="content-wrapper" class="d-flex flex-column">
 
-                    <?php endif; ?>
+                        <!-- Main Content -->
+                        <div id="content">
+
+                            <!-- Topbar -->
+                            <?php $this->load->view("--temp/-prop/-topbar"); ?>
+                            <!-- End of Topbar -->
+
+                            <?php endif; ?>

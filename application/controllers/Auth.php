@@ -1,4 +1,6 @@
 <?php
+defined('BASEPATH') or exit('No direct script access allowed');
+
 
 class Auth extends CI_Controller
 {
@@ -8,6 +10,8 @@ class Auth extends CI_Controller
         $this->load->library('form_validation');
         $this->load->model('m_Auth', 'a');
     }
+
+    //tampilan login admin
 
     public function index()
     {
@@ -21,6 +25,8 @@ class Auth extends CI_Controller
             $this->_login();
         }
     }
+
+    //System keamanan Login leve 1
 
     private function _login()
     {
@@ -36,7 +42,8 @@ class Auth extends CI_Controller
                 if ($login["password"] == $pass) {
                     // cek Password
                     $data = [
-                        'email' => $login['email']
+                        'email' => $login['email'],
+                        'groub' => $login['groub']
                     ];
                     $dat2 = ["last_log" => date('Y-m-d h:i:s')];
                     $login = $this->a->log($user, $dat2);
@@ -56,6 +63,18 @@ class Auth extends CI_Controller
             $this->session->set_flashdata('message', ' <div class="alert alert-danger mt-5" role="alert">Akun tidak terdaftar!</div>');
             redirect('auth');
         }
+    }
+
+    //locked access
+
+
+    //Log Out
+
+    public function logout()
+    {
+        $this->session->unset_userdata('email');
+        $this->session->set_flashdata('message', ' <div class="alert alert-success mt-5" role="alert">Anda Telah Logout!</div>');
+        redirect('auth');
     }
 
     //aturan
