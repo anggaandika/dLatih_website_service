@@ -14,7 +14,7 @@
 
         <!-- Nav Item - Dashboard -->
         <li class="nav-item <?php if ($this->uri->segment(1) == "dashboard") : ?> active <?php endif; ?> ">
-            <a class="nav-link" href="index.html">
+            <a class="nav-link" href="<?= base_url("dashboard"); ?>">
                 <i class="fas fa-fw fa-tachometer-alt"></i>
                 <span>Dashboard</span></a>
         </li>
@@ -39,7 +39,7 @@
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Data User:</h6>
                     <a class="collapse-item <?php if ($this->uri->segment(2) == "pelatih") : ?> active <?php endif; ?>"
-                        href="<?=base_url('Pelatih'); ?>">Pelatih</a>
+                        href="<?= base_url("pelatih"); ?>">Pelatih</a>
                     <a class="collapse-item <?php if ($this->uri->segment(2) == "siswa") : ?> active <?php endif; ?>"
                         href="cards.html">Siswa</a>
                 </div>
