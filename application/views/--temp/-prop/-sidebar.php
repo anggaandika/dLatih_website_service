@@ -39,7 +39,7 @@
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Data User:</h6>
                     <a class="collapse-item <?php if ($this->uri->segment(2) == "pelatih") : ?> active <?php endif; ?>"
-                        href="buttons.html">Pelatih</a>
+                        href="<?=base_url('Pelatih'); ?>">Pelatih</a>
                     <a class="collapse-item <?php if ($this->uri->segment(2) == "siswa") : ?> active <?php endif; ?>"
                         href="cards.html">Siswa</a>
                 </div>
