@@ -32,7 +32,7 @@
                       <td>Jokoman</td>
                       <td>jokoman@gmail.com</td>
                       <td width="100">
-                          <a href="#" class="btn btn-info btn-icon-split">
+                          <a href="<?= base_url('pelatih/detail')?>" class="btn btn-info btn-icon-split">
                             <span class="icon text-white-1"><i class="fas fa-info-circle"></i></span>
                             <span class="text">Detail</span>
                           </a>

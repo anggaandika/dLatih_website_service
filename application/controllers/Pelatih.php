@@ -21,4 +21,16 @@ class Pelatih extends CI_Controller{
         $this->load->view('pelatih',$data);
         $this->load->view('--temp/-footer');
     }
+    public function detail(){
+        $log = $this->session->userdata('email');
+        //data jumlah dalam angka
+        $data['sis'] = $this->a->getAllByGroub('3');
+        $data['pel'] = $this->a->getAllByGroub('2');
+        //data user sesuai dari session
+        $data['user'] = $this->a->getAllUser($log);
+        $this->load->view('--temp/-header', $data);
+        $this->load->view('detail_pelatih');
+        
+        $this->load->view('--temp/-footer');
+    }
 }
