@@ -1,4 +1,4 @@
-<?php if ($this->uri->segment(1) != "auth") : ?>
+<?php if ($this->uri->segment(1) != "auth" && $this->uri->segment(1) != "") : ?>
 <!-- Footer -->
 <footer class="sticky-footer bg-white">
     <div class="container my-auto">

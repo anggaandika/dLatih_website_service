@@ -22,7 +22,7 @@
 
 </head>
 
-<?php if ($this->uri->segment(1) == "auth") : ?>
+<?php if ($this->uri->segment(1) == "auth" || !$this->uri->segment(1)) : ?>
 
 <body class="bg-gradient-primary">
 
