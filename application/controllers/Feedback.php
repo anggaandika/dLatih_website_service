@@ -1,5 +1,5 @@
 <?php
-class Pelatih extends CI_Controller
+class Feedback extends CI_Controller
 {
     function __construct()
     {
@@ -20,19 +20,18 @@ class Pelatih extends CI_Controller
         $data['data'] = $this->u->getAllUserByGroub('2');
         //tampilan dashboard
         $this->load->view('--temp/-header', $data);
-        $this->load->view('pelatih', $data);
+        $this->load->view('feedback', $data);
         $this->load->view('--temp/-footer');
     }
-    public function detail()
+    public function reply()
     {
         $log = $this->session->userdata('email');
         //data jumlah dalam angka
-        $data['sis'] = $this->a->getAllByGroub('3');
-        $data['pel'] = $this->a->getAllByGroub('2');
+
         //data user sesuai dari session
         $data['user'] = $this->a->getAllUser($log);
         $this->load->view('--temp/-header', $data);
-        $this->load->view('detail_pelatih');
+        $this->load->view('reply_feedback');
         $this->load->view('--temp/-footer');
     }
 }
