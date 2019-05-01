@@ -30,24 +30,33 @@
                     </tfoot>
                     <tbody>
                         <?php foreach ($data as $key => $value) : ?>
-                            <tr>
-                                <td><?= $value['username']; ?></td>
-                                <td><?= $value['email']; ?></td>
-                                <td>
-                                    <?php
+                        <tr>
+                            <td><?= $value['username']; ?></td>
+                            <td><?= $value['email']; ?></td>
+                            <td>
+                                <?php
                                     if ($value['jenis_kelamin'] == "L") {
                                         echo "LAKI-LAKI";
                                     } elseif ($value['jenis_kelamin'] == "P") {
                                         echo "PEREMPUAN";
                                     } ?>
-                                </td>
-                                <td width="100">
-                                    <a href="<?= base_url('pelatih/detail/' . $value['id']) ?>" class="btn btn-info btn-icon-split">
-                                        <span class="icon text-white-1"><i class="fas fa-info-circle"></i></span>
-                                        <span class="text">Detail</span>
-                                    </a>
-                                </td>
-                            </tr>
+                            </td>
+                            <th><?php
+                                    if ($value['activated'] == "0") {
+                                        echo "Belum Active";
+                                    } elseif ($value['activated'] == "1") {
+                                        echo "Active";
+                                    } elseif ($value['activated'] == "2") {
+                                        echo "Banned";
+                                    } ?></th>
+                            <td width="100">
+                                <a href="<?= base_url('pelatih/detail/' . $value['id']) ?>"
+                                    class="btn btn-info btn-icon-split">
+                                    <span class="icon text-white-1"><i class="fas fa-info-circle"></i></span>
+                                    <span class="text">Detail</span>
+                                </a>
+                            </td>
+                        </tr>
                         <?php endforeach; ?>
                     </tbody>
                 </table>
