@@ -17,20 +17,22 @@ class Admin extends CI_Controller
         //data user sesuai dari session
         $data['user'] = $this->a->getAllUser($log);
         //menampilkan data user
-        $data['data'] = $this->u->getAllUserByGroub('2');
+        $data['data'] = $this->u->getAllUserByGroub('1');
         //tampilan dashboard
         $this->load->view('--temp/-header', $data);
-        $this->load->view('admin', $data);
+        $this->load->view('admin/list_admin', $data);
         $this->load->view('--temp/-footer');
     }
-    public function edit()
+    public function edit($id)
     {
         $log = $this->session->userdata('email');
         //data jumlah dalam angka
+        //data sesuai groub dan id
+        $data['pel'] = $this->u->getAllByGroubAndId($id, '1');
         //data user sesuai dari session
         $data['user'] = $this->a->getAllUser($log);
         $this->load->view('--temp/-header', $data);
-        $this->load->view('edit_admin');
+        $this->load->view('admin/edit_admin', $data);
 
         $this->load->view('--temp/-footer');
     }

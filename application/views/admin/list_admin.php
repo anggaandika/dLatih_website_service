@@ -31,27 +31,37 @@
                         </tr>
                     </tfoot>
                     <tbody>
+                        <?php foreach ($data as $key => $value) : ?>
                         <tr>
-                            <td>Joko</td>
-                            <td>Joko@gmail.com</td>
-                            <td>Laki Laki</td>
-                            <td>Jember</td>
-                            <td>0821232424</td>
+                            <td><?= $value['username']; ?></td>
+                            <td><?= $value['email']; ?></td>
                             <td>
-                                <a href="<?= base_url('admin/edit') ?>" class="btn btn-warning btn-icon-split">
+                                <?php
+                                    if ($value['jenis_kelamin'] == "L") {
+                                        echo "LAKI-LAKI";
+                                    } elseif ($value['jenis_kelamin'] == "P") {
+                                        echo "PEREMPUAN";
+                                    } ?>
+                            </td>
+                            <td><?= $value['alamat']; ?></td>
+                            <td><?= $value['no_tlp']; ?></td>
+                            <td>
+                                <a href="<?= base_url('admin/edit/') . $value['id'] ?>"
+                                    class="btn btn-warning btn-icon-split">
                                     <span class="icon text-white-50">
                                         <i class="fas fa-exclamation-triangle"></i>
                                     </span>
                                     <span class="text">Edit</span>
                                 </a>
-                                <a href="#" class="btn btn-danger btn-icon-split">
-                                    <span class="icon text-white-50">
-                                        <i class="fas fa-trash"></i>
-                                    </span>
-                                    <span class="text">Delete</span>
-                                </a>
+                                <!-- <a href="#" class="btn btn-danger btn-icon-split">
+                                                    <span class="icon text-white-50">
+                                                        <i class="fas fa-trash"></i>
+                                                    </span>
+                                                    <span class="text">Delete</span>
+                                                </a> -->
                             </td>
                         </tr>
+                        <?php endforeach; ?>
                     </tbody>
                 </table>
             </div>

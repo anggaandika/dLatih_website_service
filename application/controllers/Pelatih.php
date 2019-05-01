@@ -28,6 +28,7 @@ class Pelatih extends CI_Controller
         $log = $this->session->userdata('email');
         //data jumlah dalam angka
         // $data['sis'] = $this->a->getAllByGroub('3');
+        //data sesuai groub dan id
         $data['pel'] = $this->u->getAllByGroubAndId($id, '2');
         //data user sesuai dari session
         $data['user'] = $this->a->getAllUser($log);
