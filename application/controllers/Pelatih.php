@@ -23,8 +23,12 @@ class Pelatih extends CI_Controller
         $this->load->view('pelatih/list_pelatih', $data);
         $this->load->view('--temp/-footer');
     }
+<<<<<<< HEAD
 
     public function detail($id)
+=======
+    public function detail()
+>>>>>>> 9e3475fb461bd26b890d3bc35cd865041cf03bab
     {
         $log = $this->session->userdata('email');
         //data jumlah dalam angka
@@ -33,6 +37,7 @@ class Pelatih extends CI_Controller
         //data user sesuai dari session
         $data['user'] = $this->a->getAllUser($log);
         $this->load->view('--temp/-header', $data);
+<<<<<<< HEAD
         $this->load->view('pelatih/detail_pelatih', $data);
 
         $this->load->view('--temp/-footer');
@@ -47,3 +52,9 @@ class Pelatih extends CI_Controller
         redirect('pelatih/detail/' . $id);
     }
 }
+=======
+        $this->load->view('detail_pelatih');
+        $this->load->view('--temp/-footer');
+    }
+}
+>>>>>>> 9e3475fb461bd26b890d3bc35cd865041cf03bab
