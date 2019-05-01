@@ -20,19 +20,30 @@ class Pelatih extends CI_Controller
         $data['data'] = $this->u->getAllUserByGroub('2');
         //tampilan dashboard
         $this->load->view('--temp/-header', $data);
-        $this->load->view('pelatih', $data);
+        $this->load->view('pelatih/list_pelatih', $data);
         $this->load->view('--temp/-footer');
     }
-    public function detail(){
+
+    public function detail($id)
+    {
         $log = $this->session->userdata('email');
         //data jumlah dalam angka
-        $data['sis'] = $this->a->getAllByGroub('3');
-        $data['pel'] = $this->a->getAllByGroub('2');
+        // $data['sis'] = $this->a->getAllByGroub('3');
+        $data['pel'] = $this->u->getAllByGroubAndId($id, '2');
         //data user sesuai dari session
         $data['user'] = $this->a->getAllUser($log);
         $this->load->view('--temp/-header', $data);
-        $this->load->view('detail_pelatih');
-        
+        $this->load->view('pelatih/detail_pelatih', $data);
+
         $this->load->view('--temp/-footer');
+    }
+
+    public function banned($id)
+    {
+        $data = [
+            'activated' => '2'
+        ];
+        $data['pel'] = $this->u->bannedUser($id, $data);
+        redirect('pelatih/detail/' . $id);
     }
 }
