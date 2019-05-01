@@ -14,6 +14,7 @@
                             <th>Username</th>
                             <th>Email</th>
                             <th>Jenis Kelamin</th>
+                            <th>Status</th>
                             <th>Detail</th>
                         </tr>
                     </thead>
@@ -22,6 +23,7 @@
                             <th>Username</th>
                             <th>Email</th>
                             <th>Jenis Kelamin</th>
+                            <th>Status</th>
                             <th>Detail</th>
 
                         </tr>
