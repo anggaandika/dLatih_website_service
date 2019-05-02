@@ -43,7 +43,7 @@
                         <i class="fas fa-fw fa-table"></i>
                         <span>Pelatih</span></a>
                     <a class="collapse-item <?php if ($this->uri->segment(1) == "siswa") : ?> active <?php endif; ?>"
-                        href="cards.html"><i class="fas fa-fw fa-table"></i><span>Siswa</span></a>
+                        href="<?= base_url("siswa"); ?>"><i class="fas fa-fw fa-table"></i><span>Siswa</span></a>
                 </div>
             </div>
         </li>
