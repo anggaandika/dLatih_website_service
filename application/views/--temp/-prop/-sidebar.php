@@ -76,7 +76,7 @@
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Laporan :</h6>
                     <a class="collapse-item <?php if ($this->uri->segment(1) == "report") : ?> active <?php endif; ?>"
-                        href="login.html">Report</a>
+                        href="<?= base_url("report"); ?>">Report</a>
                     <a class="collapse-item <?php if ($this->uri->segment(1) == "feedback") : ?> active <?php endif; ?>"
                         href="<?= base_url("feedback") ?>">FeedBack</a>
                     <div class="collapse-divider"></div>
