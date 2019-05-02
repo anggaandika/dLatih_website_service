@@ -1,6 +1,8 @@
 <!-- Begin Page Content -->
 <div class="container-fluid">
 
+    <?php $this->load->view('--temp/-prop/-heading')  ?>
+
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
@@ -54,11 +56,11 @@
                                     <span class="text">Edit</span>
                                 </a>
                                 <!-- <a href="#" class="btn btn-danger btn-icon-split">
-                                                    <span class="icon text-white-50">
-                                                        <i class="fas fa-trash"></i>
-                                                    </span>
-                                                    <span class="text">Delete</span>
-                                                </a> -->
+                                                        <span class="icon text-white-50">
+                                                            <i class="fas fa-trash"></i>
+                                                        </span>
+                                                        <span class="text">Delete</span>
+                                                    </a> -->
                             </td>
                         </tr>
                         <?php endforeach; ?>

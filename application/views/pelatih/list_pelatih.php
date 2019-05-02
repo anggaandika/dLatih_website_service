@@ -1,6 +1,8 @@
 <!-- Begin Page Content -->
 <div class="container-fluid">
 
+    <?php $this->load->view('--temp/-prop/-heading')  ?>
+
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">

@@ -16,11 +16,9 @@ class Feedback extends CI_Controller
         $log = $this->session->userdata('email');
         //data user sesuai dari session
         $data['user'] = $this->a->getAllUser($log);
-        //menampilkan data user
-        $data['data'] = $this->u->getAllUserByGroub('2');
         //tampilan dashboard
         $this->load->view('--temp/-header', $data);
-        $this->load->view('feedback', $data);
+        $this->load->view('feedback/list_feedback', $data);
         $this->load->view('--temp/-footer');
     }
     public function reply()
@@ -31,7 +29,7 @@ class Feedback extends CI_Controller
         //data user sesuai dari session
         $data['user'] = $this->a->getAllUser($log);
         $this->load->view('--temp/-header', $data);
-        $this->load->view('reply_feedback');
+        $this->load->view('feedback/reply_feedback');
         $this->load->view('--temp/-footer');
     }
 }
