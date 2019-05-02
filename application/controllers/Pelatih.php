@@ -44,6 +44,6 @@ class Pelatih extends CI_Controller
             'activated' => '2'
         ];
         $data['pel'] = $this->u->bannedUser($id, $data);
-        redirect('pelatih/detail/' . $id);
+        redirect('pelatih');
     }
 }

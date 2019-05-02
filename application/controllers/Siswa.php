@@ -34,7 +34,6 @@ class Siswa extends CI_Controller
         $data['user'] = $this->a->getAllUser($log);
         $this->load->view('--temp/-header', $data);
         $this->load->view('siswa/detail_siswa', $data);
-
         $this->load->view('--temp/-footer');
     }
 
@@ -44,6 +43,6 @@ class Siswa extends CI_Controller
             'activated' => '2'
         ];
         $data['pel'] = $this->u->bannedUser($id, $data);
-        redirect('siswa/detail/' . $id);
+        redirect('siswa');
     }
 }

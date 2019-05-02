@@ -27,7 +27,7 @@
                         <tr>
                             <th colspan="2">
 
-                                <a href="<?= base_url('pelatih/banned/' . $pel['id']) ?>"
+                                <a href="<?= base_url('siswa/banned/' . $pel['id']) ?>"
                                     class="btn btn-danger btn-icon-split">
                                     <span class="icon text-white-1"><i class="fas fa-trash"></i></span>
                                     <span class="text">Banned</span>
