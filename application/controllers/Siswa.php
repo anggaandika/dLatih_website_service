@@ -17,7 +17,7 @@ class Siswa extends CI_Controller
         //data user sesuai dari session
         $data['user'] = $this->a->getAllUser($log);
         //menampilkan data user
-        $data['data'] = $this->u->getAllUserByGroub('2');
+        $data['data'] = $this->u->getAllUserByGroub('3');
         //tampilan dashboard
         $this->load->view('--temp/-header', $data);
         $this->load->view('siswa/list_siswa', $data);
@@ -29,7 +29,7 @@ class Siswa extends CI_Controller
         //data jumlah dalam angka
         // $data['sis'] = $this->a->getAllByGroub('3');
         //data sesuai groub dan id
-        $data['pel'] = $this->u->getAllByGroubAndId($id, '2');
+        $data['pel'] = $this->u->getAllByGroubAndId($id, '3');
         //data user sesuai dari session
         $data['user'] = $this->a->getAllUser($log);
         $this->load->view('--temp/-header', $data);
