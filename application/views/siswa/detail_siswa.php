@@ -6,7 +6,7 @@
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Data Pelatih</h6>
+            <h6 class="m-0 font-weight-bold text-primary">Data Siswa</h6>
         </div>
         <div class="card-body text-center row">
             <div class="col-md-2"></div>
@@ -19,7 +19,7 @@
 
                     <thead>
                         <tr>
-                            <th colspan="2">Data Pelatih</th>
+                            <th colspan="2">Data Siswa</th>
                         </tr>
                     </thead>
 
