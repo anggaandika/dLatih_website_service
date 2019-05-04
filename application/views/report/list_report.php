@@ -30,7 +30,13 @@
                             <td>Pelatih dengan id ini melakukan penipuan</td>
                             <td>Bowo@gmail.com</td>
                             <td>
-                                <a href="<?= base_url('feedback/reply') ?>" class="btn btn-success btn-icon-split">
+                                <a href="<?= base_url('report/read') ?>" class="btn btn-success btn-icon-split">
+                                    <span class="icon text-white-50">
+                                        <i class="fas fa-check"></i>
+                                    </span>
+                                    <span class="text">Read</span>
+                                </a>
+                                <a href="<?= base_url('report/reply') ?>" class="btn btn-success btn-icon-split">
                                     <span class="icon text-white-50">
                                         <i class="fas fa-check"></i>
                                     </span>

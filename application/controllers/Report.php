@@ -32,4 +32,16 @@ class Report extends CI_Controller
         $this->load->view('report/reply_report');
         $this->load->view('--temp/-footer');
     }
+    public function read()
+    {
+        $log = $this->session->userdata('email');
+        //data jumlah dalam angka
+
+        //data user sesuai dari session
+        $data['user'] = $this->a->getAllUser($log);
+        $this->load->view('--temp/-header', $data);
+        $this->load->view('report/read_report');
+        $this->load->view('--temp/-footer');
+    }
+
 }
