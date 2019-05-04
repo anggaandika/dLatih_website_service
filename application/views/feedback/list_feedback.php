@@ -15,7 +15,6 @@
                         <tr>
                             <th>Feedback Masuk</th>
                             <th>Pengirim</th>
-                            <th>Pengguna</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -23,32 +22,28 @@
                         <tr>
                             <th>Feedback Masuk</th>
                             <th>Pengirim</th>
-                            <th>Pengguna</th>
                             <th>Action</th>
                         </tr>
                     </tfoot>
                     <tbody>
-                        <?php foreach ($data as $key => $value) : ?>
-                            <tr>
-                                <td><?= $value->pesan; ?></td>
-                                <td><?= $value->email; ?></td>
-                                <td><?= $value->name; ?></td>
-                                <td>
-                                    <a href="<?= base_url('feedback/reply') ?>" class="btn btn-success btn-icon-split">
-                                        <span class="icon text-white-50">
-                                            <i class="fas fa-check"></i>
-                                        </span>
-                                        <span class="text">Reply</span>
-                                    </a>
-                                    <a href="#" class="btn btn-danger btn-icon-split">
-                                        <span class="icon text-white-50">
-                                            <i class="fas fa-trash"></i>
-                                        </span>
-                                        <span class="text">Delete</span>
-                                    </a>
-                                </td>
-                            </tr>
-                        <?php endforeach; ?>
+                        <tr>
+                            <td>Kuranng puas</td>
+                            <td>Joko@gmail.com</td>
+                            <td>
+                                <a href="<?= base_url('feedback/reply') ?>" class="btn btn-success btn-icon-split">
+                                    <span class="icon text-white-50">
+                                        <i class="fas fa-check"></i>
+                                    </span>
+                                    <span class="text">Reply</span>
+                                </a>
+                                <a href="#" class="btn btn-danger btn-icon-split">
+                                    <span class="icon text-white-50">
+                                        <i class="fas fa-trash"></i>
+                                    </span>
+                                    <span class="text">Delete</span>
+                                </a>
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
