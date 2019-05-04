@@ -13,37 +13,42 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                            <th>Report Masuk</th>
+                            <th>Feedback Masuk</th>
                             <th>Pengirim</th>
+                            <th>Pengguna</th>
                             <th>Action</th>
                         </tr>
                     </thead>
                     <tfoot>
                         <tr>
-                            <th>Report Masuk</th>
+                            <th>Feedback Masuk</th>
                             <th>Pengirim</th>
+                            <th>Pengguna</th>
                             <th>Action</th>
                         </tr>
                     </tfoot>
                     <tbody>
-                        <tr>
-                            <td>Pelatih dengan id ini melakukan penipuan</td>
-                            <td>Bowo@gmail.com</td>
-                            <td>
-                                <a href="<?= base_url('feedback/reply') ?>" class="btn btn-success btn-icon-split">
-                                    <span class="icon text-white-50">
-                                        <i class="fas fa-check"></i>
-                                    </span>
-                                    <span class="text">Reply</span>
-                                </a>
-                                <a href="#" class="btn btn-danger btn-icon-split">
-                                    <span class="icon text-white-50">
-                                        <i class="fas fa-trash"></i>
-                                    </span>
-                                    <span class="text">Delete</span>
-                                </a>
-                            </td>
-                        </tr>
+                        <?php foreach ($data as $key => $value) : ?>
+                            <tr>
+                                <td><?= $value->pesan; ?></td>
+                                <td><?= $value->email; ?></td>
+                                <td><?= $value->name; ?></td>
+                                <td>
+                                    <a href="<?= base_url('feedback/reply') ?>" class="btn btn-success btn-icon-split">
+                                        <span class="icon text-white-50">
+                                            <i class="fas fa-check"></i>
+                                        </span>
+                                        <span class="text">Reply</span>
+                                    </a>
+                                    <a href="#" class="btn btn-danger btn-icon-split">
+                                        <span class="icon text-white-50">
+                                            <i class="fas fa-trash"></i>
+                                        </span>
+                                        <span class="text">Delete</span>
+                                    </a>
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
                     </tbody>
                 </table>
             </div>
