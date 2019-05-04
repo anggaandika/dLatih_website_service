@@ -28,22 +28,18 @@
         </div>
 
         <!-- Nav Item - Pages Collapse Menu -->
-        <li
-            class="nav-item  <?php if ($this->uri->segment(1) == "pelatih" || $this->uri->segment(1) == "siswa") : ?> active <?php endif; ?>">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-                aria-expanded="true" aria-controls="collapseTwo">
+        <li class="nav-item  <?php if ($this->uri->segment(1) == "pelatih" || $this->uri->segment(1) == "siswa") : ?> active <?php endif; ?>">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
                 <i class="fas fa-fw fa-user"></i>
                 <span>User</span>
             </a>
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Data User:</h6>
-                    <a class="collapse-item <?php if ($this->uri->segment(1) == "pelatih") : ?> active <?php endif; ?>"
-                        href="<?= base_url("pelatih"); ?>">
+                    <a class="collapse-item <?php if ($this->uri->segment(1) == "pelatih") : ?> active <?php endif; ?>" href="<?= base_url("pelatih"); ?>">
                         <i class="fas fa-fw fa-table"></i>
                         <span>Pelatih</span></a>
-                    <a class="collapse-item <?php if ($this->uri->segment(1) == "siswa") : ?> active <?php endif; ?>"
-                        href="<?= base_url("siswa"); ?>">
+                    <a class="collapse-item <?php if ($this->uri->segment(1) == "siswa") : ?> active <?php endif; ?>" href="<?= base_url("siswa"); ?>">
                         <i class="fas fa-fw fa-table"></i>
                         <span>Siswa</span></a>
                 </div>
@@ -67,24 +63,19 @@
         </div>
 
         <!-- Nav Item - Pages Collapse Menu -->
-        <li
-            class="nav-item <?php if ($this->uri->segment(1) == "report" || $this->uri->segment(1) == "feedback" || $this->uri->segment(1) == "event") : ?> active <?php endif; ?>">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
-                aria-expanded="true" aria-controls="collapsePages">
+        <li class="nav-item <?php if ($this->uri->segment(1) == "report" || $this->uri->segment(1) == "feedback" || $this->uri->segment(1) == "event") : ?> active <?php endif; ?>">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
                 <i class="fas fa-fw fa-folder"></i>
                 <span>Lain-lain</span>
             </a>
             <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Laporan :</h6>
-                    <a class="collapse-item <?php if ($this->uri->segment(1) == "report") : ?> active <?php endif; ?>"
-                        href="<?= base_url("report"); ?>">Report</a>
-                    <a class="collapse-item <?php if ($this->uri->segment(1) == "feedback") : ?> active <?php endif; ?>"
-                        href="<?= base_url("feedback") ?>">FeedBack</a>
+                    <a class="collapse-item <?php if ($this->uri->segment(1) == "report") : ?> active <?php endif; ?>" href="<?= base_url("report"); ?>">Report</a>
+                    <a class="collapse-item <?php if ($this->uri->segment(1) == "feedback") : ?> active <?php endif; ?>" href="<?= base_url("feedback") ?>">FeedBack</a>
                     <div class="collapse-divider"></div>
                     <h6 class="collapse-header">Activitas:</h6>
-                    <a class="collapse-item <?php if ($this->uri->segment(1) == "event") : ?> active <?php endif; ?>"
-                        href="404.html">Event Page</a>
+                    <a class="collapse-item <?php if ($this->uri->segment(1) == "event") : ?> active <?php endif; ?>" href="404.html">Event Page</a>
                 </div>
             </div>
         </li>
