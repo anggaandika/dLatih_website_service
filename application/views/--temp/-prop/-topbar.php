@@ -167,9 +167,15 @@
                             Settings
                         </a>
                         <!-- <a class="dropdown-item" href="#">
+<<<<<<< HEAD
+                                            <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                                            Activity Log
+                                        </a> -->
+=======
                             <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
                             Activity Log
                         </a> -->
+>>>>>>> d8ab92ebe70b226387762126ec499db8cebd569b
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                             <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
