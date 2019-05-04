@@ -8,10 +8,12 @@ class m_Massages extends CI_Model
     public function getAllMassageByGol($gol = null)
     {
         if (!$gol) {
+            $this->db->where($this->m_tabel . ".status", "1");
             $this->db->select('*')->from($this->m_tabel);
             $this->db->join($this->s_tabel, $this->s_tabel . ".id =" . $this->m_tabel . ".id_user");
             return $this->db->get()->result();
         } else {
+            $this->db->where($this->m_tabel . ".status", "1");
             $this->db->where($this->m_tabel . ".gol", $gol);
             $this->db->select('*')->from($this->m_tabel);
             $this->db->join($this->s_tabel, $this->s_tabel . ".id =" . $this->m_tabel . ".id_user");
@@ -30,7 +32,7 @@ class m_Massages extends CI_Model
     public function getJumlahMassages($gol =  null)
     {
         if (!$gol) {
-            return $this->db->get($this->m_tabel)->num_rows();
+            return $this->db->get($this->m_tabel, ["status" => "1"])->num_rows();
         } else {
             return $this->db->get($this->m_tabel, ["gol" => $gol])->num_rows();
         }
