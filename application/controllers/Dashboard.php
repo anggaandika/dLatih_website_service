@@ -26,6 +26,8 @@ class Dashboard extends CI_Controller
         //notivikasi
         $data['m'] = $this->m->getAllMassageByGol();
         $data['j'] = $this->m->getJumlahMassages();
+        $data['jRe'] = $this->m->getJumlahMassages("1");
+        $data['jFe'] = $this->m->getJumlahMassages("2");
         //tampilan dashboard
         $this->load->view('--temp/-header', $data);
         $this->load->view('dashboard', $data);
