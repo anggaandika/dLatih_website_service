@@ -38,25 +38,27 @@
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-bell fa-fw"></i>
                         <!-- Counter - Alerts -->
-                        <span class="badge badge-danger badge-counter">3+</span>
+                        <span class="badge badge-danger badge-counter">*</span>
                     </a>
                     <!-- Dropdown - Alerts -->
                     <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
                         aria-labelledby="alertsDropdown">
                         <h6 class="dropdown-header">
-                            Alerts Center
+                            Center Peringatan
                         </h6>
+                        <?php if ($user['activated'] === "0") : ?>
                         <a class="dropdown-item d-flex align-items-center" href="#">
                             <div class="mr-3">
                                 <div class="icon-circle bg-primary">
-                                    <i class="fas fa-file-alt text-white"></i>
+                                    <i class="fas fa-user text-white"></i>
                                 </div>
                             </div>
                             <div>
-                                <div class="small text-gray-500">December 12, 2019</div>
-                                <span class="font-weight-bold">A new monthly report is ready to download!</span>
+                                <div class="small text-gray-500"><?= date('M d, Y'); ?></div>
+                                <span class="font-weight-bold">Ada User Baru!</span>
                             </div>
                         </a>
+                        <?php endif; ?>
                         <a class="dropdown-item d-flex align-items-center" href="#">
                             <div class="mr-3">
                                 <div class="icon-circle bg-success">
@@ -89,18 +91,25 @@
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-envelope fa-fw"></i>
                         <!-- Counter - Messages -->
-                        <span class="badge badge-danger badge-counter"><?= $jum; ?></span>
+                        <span class="badge badge-danger badge-counter">
+                            <?php if ($jum <= 10) : ?>
+                            <?= $jum; ?>
+                            <?php else : ?>
+                            10+
+                            <?php endif; ?>
+                        </span>
                     </a>
                     <!-- Dropdown - Messages -->
                     <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
                         aria-labelledby="messagesDropdown">
                         <h6 class="dropdown-header">
-                            Message Center
+                            Center Pesan
                         </h6>
                         <?php foreach ($mas as $key => $value) : ?>
-                        <a class="dropdown-item d-flex align-items-center" href="#">
+                        <a class="dropdown-item d-flex align-items-center"
+                            href="<?= base_url("pesan/massages/" . $value->id_user . "/" . $value->gol); ?>">
                             <div class="dropdown-list-image mr-3">
-                                <img class="rounded-circle" src="<?= base_url('upload/profil/' . $user["photo"]); ?>"
+                                <img class="rounded-circle" src="<?= base_url('upload/profil/' . $value->photo); ?>"
                                     alt="">
                                 <div class="status-indicator bg-success"></div>
                             </div>
@@ -136,9 +145,9 @@
                             Settings
                         </a>
                         <!-- <a class="dropdown-item" href="#">
-                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Activity Log
-                                </a> -->
+                                        <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                                        Activity Log
+                                    </a> -->
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                             <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
