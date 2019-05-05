@@ -16,10 +16,25 @@
 
                     <thead>
                         <tr>
-                            <th>Read Report</th>
+                            <th>
+                                <?= $r['username']; ?>
+                            </th>
                         </tr>
                     </thead>
-
+                    <tfoot>
+                        <tr>
+                            <th>
+                                <?= $r['name']; ?>
+                            </th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        <tr>
+                            <th>
+                                <?= $r['pesan']; ?>
+                            </th>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
             <div class="col-md-2"></div>

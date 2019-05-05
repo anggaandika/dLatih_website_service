@@ -28,9 +28,8 @@ class Report extends CI_Controller
     public function reply()
     {
         $log = $this->session->userdata('email');
-        //data jumlah dalam angka
         //notivikasi
-        $data['m'] = $this->m->getAllMassageByGol();
+        $data['m'] = $this->m->getAllMassageByGol("2");
         $data['j'] = $this->m->getJumlahMassages();
         //data user sesuai dari session
         $data['user'] = $this->a->getAllUser($log);
@@ -38,16 +37,17 @@ class Report extends CI_Controller
         $this->load->view('report/reply_report');
         $this->load->view('--temp/-footer');
     }
-    public function read()
+    public function read($id)
     {
         $log = $this->session->userdata('email');
-        //data jumlah dalam angka
-
+        //notivikasi
+        $data['m'] = $this->m->getAllMassageByGol();
+        $data['j'] = $this->m->getJumlahMassages();
+        $data['r'] = $this->m->getMassage($id, "2");
         //data user sesuai dari session
         $data['user'] = $this->a->getAllUser($log);
         $this->load->view('--temp/-header', $data);
         $this->load->view('report/read_report');
         $this->load->view('--temp/-footer');
     }
-
 }

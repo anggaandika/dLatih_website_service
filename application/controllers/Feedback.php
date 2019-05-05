@@ -18,7 +18,7 @@ class Feedback extends CI_Controller
         //data user sesuai dari session
         $data['user'] = $this->a->getAllUser($log);
         //notivikasi
-        $data['m'] = $this->m->getAllMassageByGol();
+        $data['m'] = $this->m->getAllMassageByGol(1);
         $data['j'] = $this->m->getJumlahMassages();
         //tampilan dashboard
         $this->load->view('--temp/-header', $data);

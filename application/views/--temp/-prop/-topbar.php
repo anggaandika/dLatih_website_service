@@ -61,27 +61,27 @@
                             </div>
                         </a>
                         <!-- <a class="dropdown-item d-flex align-items-center" href="#">
-                                                <div class="mr-3">
-                                                    <div class="icon-circle bg-success">
-                                                        <i class="fas fa-donate text-white"></i>
-                                                    </div>
-                                                </div>
-                                                <div>
-                                                    <div class="small text-gray-500">December 7, 2019</div>
-                                                    $290.29 has been deposited into your account!
-                                                </div>
-                                            </a>
-                                            <a class="dropdown-item d-flex align-items-center" href="#">
-                                                <div class="mr-3">
-                                                    <div class="icon-circle bg-warning">
-                                                        <i class="fas fa-exclamation-triangle text-white"></i>
-                                                    </div>
-                                                </div>
-                                                <div>
-                                                    <div class="small text-gray-500">December 2, 2019</div>
-                                                    Spending Alert: We've noticed unusually high spending for your account.
-                                                </div>
-                                            </a> -->
+                                                        <div class="mr-3">
+                                                            <div class="icon-circle bg-success">
+                                                                <i class="fas fa-donate text-white"></i>
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <div class="small text-gray-500">December 7, 2019</div>
+                                                            $290.29 has been deposited into your account!
+                                                        </div>
+                                                    </a>
+                                                    <a class="dropdown-item d-flex align-items-center" href="#">
+                                                        <div class="mr-3">
+                                                            <div class="icon-circle bg-warning">
+                                                                <i class="fas fa-exclamation-triangle text-white"></i>
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <div class="small text-gray-500">December 2, 2019</div>
+                                                            Spending Alert: We've noticed unusually high spending for your account.
+                                                        </div>
+                                                    </a> -->
                         <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
                     </div>
                     <?php endif; ?>
@@ -102,19 +102,19 @@
                             Message Center
                         </h6>
                         <?php foreach ($m as $key => $value) : ?>
-                        <a class="dropdown-item d-flex align-items-center" href="#">
-                            <div class="dropdown-list-image mr-3">
-                                <img class="rounded-circle" src="<?= base_url('upload/profil/' . $value->photo); ?>"
-                                    alt="">
-                                <div class="status-indicator bg-success"></div>
-                            </div>
-                            <div class="font-weight-bold">
-                                <div class="text-truncate"><?= $value->pesan; ?>.</div>
-                                <div class="small text-gray-500"><?= $value->username; ?> · 58m</div>
-                            </div>
-                        </a>
-                        <?php endforeach; ?>
-                        <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
+                        <a class="dropdown-item d-flex align-items-center"
+                            href="<?= base_url('report/read/' . $value->id_user) ?>"">
+                                    <div class=" dropdown-list-image mr-3">
+                            <img class="rounded-circle" src="<?= base_url('upload/profil/' . $value->photo); ?>" alt="">
+                            <div class="status-indicator bg-success"></div>
+                    </div>
+                    <div class="font-weight-bold">
+                        <div class="text-truncate"><?= $value->pesan; ?>.</div>
+                        <div class="small text-gray-500"><?= $value->username; ?> · 58m</div>
+                    </div>
+                    </a>
+                    <?php endforeach; ?>
+                    <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
                     </div>
                 </li>
 

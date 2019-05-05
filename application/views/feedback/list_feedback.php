@@ -13,22 +13,23 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                            <th>Feedback Masuk</th>
                             <th>Pengirim</th>
+                            <th>Feedback Masuk</th>
                             <th>Action</th>
                         </tr>
                     </thead>
                     <tfoot>
                         <tr>
-                            <th>Feedback Masuk</th>
                             <th>Pengirim</th>
+                            <th>Feedback Masuk</th>
                             <th>Action</th>
                         </tr>
                     </tfoot>
                     <tbody>
+                        <?php foreach ($m as $val => $ma) : ?>
                         <tr>
-                            <td>Kuranng puas</td>
-                            <td>Joko@gmail.com</td>
+                            <td><?= $ma->username ?></td>
+                            <td><?= $ma->pesan ?></td>
                             <td>
                                 <a href="<?= base_url('feedback/reply') ?>" class="btn btn-success btn-icon-split">
                                     <span class="icon text-white-50">
@@ -44,6 +45,7 @@
                                 </a>
                             </td>
                         </tr>
+                        <?php endforeach; ?>
                     </tbody>
                 </table>
             </div>
