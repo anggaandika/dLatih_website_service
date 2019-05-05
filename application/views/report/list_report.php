@@ -32,7 +32,7 @@
                             <td><?= $ma->pesan ?></td>
                             <td>
                                 <a href="<?= base_url('report/read/' . $ma->id_user) ?>"
-                                    class="btn btn-success btn-icon-split">
+                                    class="btn btn-primary btn-icon-split">
                                     <span class="icon text-white-50">
                                         <i class="fas fa-check"></i>
                                     </span>
