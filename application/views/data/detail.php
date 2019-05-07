@@ -6,7 +6,7 @@
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Data Pelatih</h6>
+            <h6 class="m-0 font-weight-bold text-primary">Data Siswa</h6>
         </div>
         <div class="card-body text-center row">
             <div class="col-md-2"></div>
@@ -19,25 +19,26 @@
 
                     <thead>
                         <tr>
-                            <th colspan="2">Data Pelatih</th>
+                            <th colspan="2">Data Siswa</th>
                         </tr>
                     </thead>
 
                     <tfoot>
                         <tr>
                             <th colspan="2">
-
-                                <a href="<?= base_url('pelatih/banned/' . $pel['id']) ?>"
+                                <?php if ($pel['activated'] === "1") : ?>
+                                <a href="<?= base_url($this->uri->segment(1) . '/' . 'banned/' . $pel['id']) ?>"
                                     class="btn btn-danger btn-icon-split">
                                     <span class="icon text-white-1"><i class="fas fa-trash"></i></span>
                                     <span class="text">Banned</span>
                                 </a>
-                                <a href="#" class="btn btn-warning btn-icon-split">
-                                    <span class="icon text-white-50">
-                                        <i class="fas fa-exclamation-triangle"></i>
-                                    </span>
-                                    <span class="text">Edit</span>
+                                <?php else : ?>
+                                <a href="<?= base_url($this->uri->segment(1) . '/' . 'active/' . $pel['id']) ?>"
+                                    class="btn btn-success btn-icon-split">
+                                    <span class="icon text-white-1"><i class="fas fa-user"></i></span>
+                                    <span class="text">Active</span>
                                 </a>
+                                <?php endif; ?>
 
 
                             </th>

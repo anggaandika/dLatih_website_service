@@ -24,7 +24,7 @@ class Siswa extends CI_Controller
         $data['j'] = $this->m->getJumlahMassages();
         //tampilan dashboard
         $this->load->view('--temp/-header', $data);
-        $this->load->view('siswa/list_siswa', $data);
+        $this->load->view('data/list', $data);
         $this->load->view('--temp/-footer');
     }
     public function detail($id)
@@ -40,7 +40,7 @@ class Siswa extends CI_Controller
         //data user sesuai dari session
         $data['user'] = $this->a->getAllUser($log);
         $this->load->view('--temp/-header', $data);
-        $this->load->view('siswa/detail_siswa', $data);
+        $this->load->view('data/detail', $data);
 
         $this->load->view('--temp/-footer');
     }
@@ -50,7 +50,15 @@ class Siswa extends CI_Controller
         $data = [
             'activated' => '2'
         ];
-        $data['pel'] = $this->u->bannedUser($id, $data);
-        redirect('siswa/detail/' . $id);
+        $this->u->bannedUser($id, $data);
+        redirect('siswa');
+    }
+    public function active($id)
+    {
+        $data = [
+            'activated' => '1'
+        ];
+        $this->u->bannedUser($id, $data);
+        redirect('siswa');
     }
 }

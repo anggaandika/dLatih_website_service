@@ -6,11 +6,12 @@
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Data Pelatih</h6>
+            <h6 class="m-0 font-weight-bold text-primary">Data <?= $user['name']; ?></h6>
         </div>
         <div class="card-body text-center row">
             <div class="col-md-4">
-                <img class="img-profile rounded-circle" width="180px" src="<?= base_url('upload/profil/' . $user['photo']); ?>">
+                <img class="img-profile rounded-circle" width="180px"
+                    src="<?= base_url('upload/profil/' . $user['photo']); ?>">
 
                 <table class="table text-center mt-3">
                     <tr>
@@ -45,11 +46,12 @@
                     </tfoot>
                     <tbody>
                         <tr>
-                            <td>Nama:</td>
-                            <td ><input type="text" style="border: 0" class="text-center" name="" value="<?= $user['username']; ?>"></td>
+                            <td>Nama</td>
+                            <td><input type="text" style="border: 0" class="text-center" name=""
+                                    value="<?= $user['username']; ?>"></td>
                         </tr>
                         <tr>
-                            <td>Username</td>
+                            <td>Jabatan</td>
                             <td><?= $user['name']; ?></td>
                         </tr>
                         <tr>
@@ -68,7 +70,8 @@
                         </tr>
                         <tr>
                             <td>Contact Person</td>
-                            <td><input type="text" style="border: 0" class="text-center" name="" value="<?= $user['no_tlp']; ?>"></td>
+                            <td><input type="text" style="border: 0" class="text-center" name=""
+                                    value="<?= $user['no_tlp']; ?>"></td>
                         </tr>
 
                     </tbody>

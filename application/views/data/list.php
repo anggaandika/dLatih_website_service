@@ -52,7 +52,7 @@
                                         echo "Banned";
                                     } ?></th>
                             <td width="100">
-                                <a href="<?= base_url('pelatih/detail/' . $value['id']) ?>"
+                                <a href="<?= base_url($this->uri->segment(1) . '/' . 'detail/' . $value['id']) ?>"
                                     class="btn btn-info btn-icon-split">
                                     <span class="icon text-white-1"><i class="fas fa-info-circle"></i></span>
                                     <span class="text">Detail</span>

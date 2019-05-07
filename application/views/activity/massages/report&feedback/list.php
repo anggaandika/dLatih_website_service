@@ -26,25 +26,27 @@
                         </tr>
                     </tfoot>
                     <tbody>
-                        <?php foreach ($m as $val => $ma) : ?>
+                        <?php foreach ($maa as $val => $ma) : ?>
                         <tr>
                             <td><?= $ma->username ?></td>
                             <td><?= $ma->pesan ?></td>
                             <td>
-                                <a href="<?= base_url('report/read/' . $ma->id_user) ?>"
+                                <a href="<?= base_url($this->uri->segment(1) . '/' . 'read/' . $ma->id_user) ?>"
                                     class="btn btn-primary btn-icon-split">
                                     <span class="icon text-white-50">
                                         <i class="fas fa-check"></i>
                                     </span>
                                     <span class="text">Read</span>
                                 </a>
-                                <a href="<?= base_url('report/reply') ?>" class="btn btn-success btn-icon-split">
+                                <a href="<?= base_url($this->uri->segment(1) . '/' . 'reply') ?>"
+                                    class="btn btn-success btn-icon-split">
                                     <span class="icon text-white-50">
                                         <i class="fas fa-check"></i>
                                     </span>
                                     <span class="text">Reply</span>
                                 </a>
-                                <a href="#" class="btn btn-danger btn-icon-split">
+                                <a href="<?= base_url($this->uri->segment(1) . '/' . 'reply') ?>"
+                                    class="btn btn-danger btn-icon-split">
                                     <span class="icon text-white-50">
                                         <i class="fas fa-trash"></i>
                                     </span>

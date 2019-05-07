@@ -24,7 +24,7 @@ class Pelatih extends CI_Controller
         $data['j'] = $this->m->getJumlahMassages();
         //tampilan dashboard
         $this->load->view('--temp/-header', $data);
-        $this->load->view('pelatih/list_pelatih', $data);
+        $this->load->view('data/list', $data);
         $this->load->view('--temp/-footer');
     }
     public function detail($id)
@@ -40,7 +40,7 @@ class Pelatih extends CI_Controller
         //data user sesuai dari session
         $data['user'] = $this->a->getAllUser($log);
         $this->load->view('--temp/-header', $data);
-        $this->load->view('pelatih/detail_pelatih', $data);
+        $this->load->view('data/detail', $data);
 
         $this->load->view('--temp/-footer');
     }
@@ -50,7 +50,15 @@ class Pelatih extends CI_Controller
         $data = [
             'activated' => '2'
         ];
-        $data['pel'] = $this->u->bannedUser($id, $data);
-        redirect('pelatih/detail/' . $id);
+        $this->u->bannedUser($id, $data);
+        redirect('pelatih');
+    }
+    public function active($id)
+    {
+        $data = [
+            'activated' => '1'
+        ];
+        $this->u->bannedUser($id, $data);
+        redirect('pelatih');
     }
 }

@@ -18,23 +18,25 @@ class Report extends CI_Controller
         //data user sesuai dari session
         $data['user'] = $this->a->getAllUser($log);
         //notivikasi
+        $data['maa'] = $this->m->getAllMassageByGol(2);
         $data['m'] = $this->m->getAllMassageByGol();
         $data['j'] = $this->m->getJumlahMassages();
         //tampilan dashboard
         $this->load->view('--temp/-header', $data);
-        $this->load->view('report/list_report', $data);
+        $this->load->view('activity/massages/report&feedback/list', $data);
         $this->load->view('--temp/-footer');
     }
     public function reply()
     {
         $log = $this->session->userdata('email');
         //notivikasi
-        $data['m'] = $this->m->getAllMassageByGol("2");
+        $data['maa'] = $this->m->getAllMassageByGol(2);
+        $data['m'] = $this->m->getAllMassageByGol();
         $data['j'] = $this->m->getJumlahMassages();
         //data user sesuai dari session
         $data['user'] = $this->a->getAllUser($log);
         $this->load->view('--temp/-header', $data);
-        $this->load->view('report/reply_report');
+        $this->load->view('activity/massages/report&feedback/reply');
         $this->load->view('--temp/-footer');
     }
     public function read($id)
@@ -47,7 +49,7 @@ class Report extends CI_Controller
         //data user sesuai dari session
         $data['user'] = $this->a->getAllUser($log);
         $this->load->view('--temp/-header', $data);
-        $this->load->view('report/read_report');
+        $this->load->view('activity/massages/report&feedback/read');
         $this->load->view('--temp/-footer');
     }
 }

@@ -9,13 +9,15 @@ class m_Massages extends CI_Model
     {
         if (!$gol) {
             $this->db->where($this->m_tabel . ".status", "1");
+            $this->db->where_not_in($this->m_tabel . ".form", "1");
             $this->db->select('*')->from($this->m_tabel);
-            $this->db->join($this->s_tabel, $this->s_tabel . ".id =" . $this->m_tabel . ".id_user");
+            $this->db->join($this->s_tabel, $this->s_tabel . ".id =" . $this->m_tabel . ".form");
             return $this->db->get()->result();
         } else {
             $this->db->where($this->m_tabel . ".gol", $gol);
+            $this->db->where_not_in($this->m_tabel . ".form", "1");
             $this->db->select('*')->from($this->m_tabel);
-            $this->db->join($this->s_tabel, $this->s_tabel . ".id =" . $this->m_tabel . ".id_user");
+            $this->db->join($this->s_tabel, $this->s_tabel . ".id =" . $this->m_tabel . ".form");
             return $this->db->get()->result();
         }
     }
@@ -23,8 +25,9 @@ class m_Massages extends CI_Model
     {
         $this->db->where($this->m_tabel . ".id_user", $id);
         $this->db->where($this->m_tabel . ".gol", $gol);
+        $this->db->where_not_in($this->m_tabel . ".form", "1");
         $this->db->select('*')->from($this->m_tabel);
-        $this->db->join($this->s_tabel, $this->s_tabel . ".id =" . $this->m_tabel . ".id_user");
+        $this->db->join($this->s_tabel, $this->s_tabel . ".id =" . $this->m_tabel . ".form");
         return $this->db->get()->row_array();
     }
 

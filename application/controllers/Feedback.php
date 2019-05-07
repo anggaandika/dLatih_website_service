@@ -18,22 +18,39 @@ class Feedback extends CI_Controller
         //data user sesuai dari session
         $data['user'] = $this->a->getAllUser($log);
         //notivikasi
-        $data['m'] = $this->m->getAllMassageByGol(1);
+        $data['maa'] = $this->m->getAllMassageByGol(1);
+        $data['m'] = $this->m->getAllMassageByGol();
         $data['j'] = $this->m->getJumlahMassages();
         //tampilan dashboard
         $this->load->view('--temp/-header', $data);
-        $this->load->view('feedback/list_feedback', $data);
+        $this->load->view('activity/massages/report&feedback/list', $data);
         $this->load->view('--temp/-footer');
     }
     public function reply()
     {
+        //session data email
         $log = $this->session->userdata('email');
-        //data jumlah dalam angka
-
+        //notivikasi
+        $data['maa'] = $this->m->getAllMassageByGol(1);
+        $data['m'] = $this->m->getAllMassageByGol();
+        $data['j'] = $this->m->getJumlahMassages();
         //data user sesuai dari session
         $data['user'] = $this->a->getAllUser($log);
         $this->load->view('--temp/-header', $data);
-        $this->load->view('feedback/reply_feedback');
+        $this->load->view('activity/massages/report&feedback/reply');
+        $this->load->view('--temp/-footer');
+    }
+    public function read($id)
+    {
+        $log = $this->session->userdata('email');
+        //notivikasi
+        $data['m'] = $this->m->getAllMassageByGol();
+        $data['j'] = $this->m->getJumlahMassages();
+        $data['r'] = $this->m->getMassage($id, "1");
+        //data user sesuai dari session
+        $data['user'] = $this->a->getAllUser($log);
+        $this->load->view('--temp/-header', $data);
+        $this->load->view('activity/massages/report&feedback/read');
         $this->load->view('--temp/-footer');
     }
 }
