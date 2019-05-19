@@ -19,4 +19,12 @@ class m_Auth extends CI_Model
     {
         return $this->db->get_where($this->m_tabel, ['email' => $email])->row_array();
     }
+
+    public function authUser($email, $password)
+    {
+        $this->db->where('email', $email);
+        $this->db->where('password', $password);
+        $this->db->not_like('groub', '1');
+        return $this->db->get($this->m_tabel)->row();
+    }
 }

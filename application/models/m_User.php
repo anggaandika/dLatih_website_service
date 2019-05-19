@@ -25,4 +25,23 @@ class m_User extends CI_Model
     {
         $this->db->update($this->m_tabel, $data, ["id" => $id]);
     }
+
+    function get_by_username_email($username, $email)
+    {
+        #Get data by username or email
+        $this->db->where('username', $username);
+        $this->db->or_where('email', $email);
+        $data = $this->db->get($this->m_tabel)->row();
+
+        return $data;
+    }
+
+    function insert($data)
+    {
+
+        #Insert data to table tb_users
+        $insert = $this->db->insert($this->m_tabel, $data);
+
+        return $insert;
+    }
 }
