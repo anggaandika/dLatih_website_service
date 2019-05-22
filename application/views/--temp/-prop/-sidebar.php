@@ -84,7 +84,7 @@
                     <div class="collapse-divider"></div>
                     <h6 class="collapse-header">Activitas:</h6>
                     <a class="collapse-item <?php if ($this->uri->segment(1) == "event") : ?> active <?php endif; ?>"
-                        href="404.html">Event Page</a>
+                        href="<?= base_url("katagori") ?>">Katagori</a>
                 </div>
             </div>
         </li>
