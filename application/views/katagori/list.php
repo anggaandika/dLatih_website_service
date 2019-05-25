@@ -18,24 +18,24 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                            <th>No</th>
                             <th>Katagori</th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tfoot>
                         <tr>
-                            <th>No</th>
                             <th>Katagori</th>
+                            <th></th>
                         </tr>
                     </tfoot>
                     <tbody>
-                        <?php $n = '1'; ?>
                         <?php foreach ($data as $key => $value) : ?>
                         <tr>
-                            <td><?= $n; ?></td>
                             <td><?= $value['katagori']; ?></td>
+                            <td><a href="" id='btn-edit' class="btn btn-outline btn-circle btn-sm purple"
+                                    data-id="<?= $value['id_katagori']; ?>"><i class="fa fa-edit"></i>Edit</a>
+                            </td>
                         </tr>
-                        <?php $n++; ?>
                         <?php endforeach; ?>
                     </tbody>
                 </table>
@@ -68,6 +68,35 @@
             </form>
         </div>
     </div>
+</div>
+
+<div class="modal fade in" id="modal">
+    <div class="modal-dialog moda-md">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title">
+                    <h5>Edit Katagori</h5>
+                </div>
+            </div>
+            <div class="modal-body">
+                <form id='mb'>
+                    <input type="hidden" name="id" value="">
+
+                    <div class="form-group">
+                        <label>Nama Katagori</label>
+                        <input type="text" name="name" class="form-control">
+                    </div>
+
+                    <div class="form-group clearfix">
+                        <button type="button" id="btn" class="btn btn-success pull-right">Simpan</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
 </div>
 
 </div>

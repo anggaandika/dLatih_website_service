@@ -6,12 +6,11 @@
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Read Report</h6>
+            <h6 class="m-0 font-weight-bold text-primary">Read</h6>
         </div>
         <div class="card-body text-center row">
             <div class="col-md-2"></div>
-            <div class="table text-center col-md-8">
-
+            <div class="table col-md-8">
                 <table width="100%" cellspacing="0">
 
                     <thead>
@@ -30,9 +29,9 @@
                     </tfoot>
                     <tbody>
                         <tr>
-                            <th>
+                            <td>
                                 <?= $r['pesan']; ?>
-                            </th>
+                            </td>
                         </tr>
                     </tbody>
                 </table>

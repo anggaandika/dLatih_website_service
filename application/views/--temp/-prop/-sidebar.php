@@ -83,13 +83,14 @@
                         href="<?= base_url("feedback") ?>">FeedBack</a>
                     <div class="collapse-divider"></div>
                     <h6 class="collapse-header">Activitas:</h6>
-                    <a class="collapse-item <?php if ($this->uri->segment(1) == "event") : ?> active <?php endif; ?>"
+                    <a class="collapse-item <?php if ($this->uri->segment(1) == "katagori") : ?> active <?php endif; ?>"
                         href="<?= base_url("katagori") ?>">Katagori</a>
                 </div>
             </div>
         </li>
 
         <!-- Divider -->
+
         <hr class="sidebar-divider d-none d-md-block">
 
         <!-- Sidebar Toggler (Sidebar) -->

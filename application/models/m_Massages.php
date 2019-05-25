@@ -2,41 +2,45 @@
 
 class m_Massages extends CI_Model
 {
-    private $m_tabel = "massages";
-    private $s_tabel = "user";
+	private $m_tabel = "massages";
+	private $s_tabel = "user";
 
-    public function getAllMassageByGol($gol = null)
-    {
-        if (!$gol) {
-            $this->db->where($this->m_tabel . ".status", "1");
-            $this->db->where_not_in($this->m_tabel . ".form", "1");
-            $this->db->select('*')->from($this->m_tabel);
-            $this->db->join($this->s_tabel, $this->s_tabel . ".id =" . $this->m_tabel . ".form");
-            return $this->db->get()->result();
-        } else {
-            $this->db->where($this->m_tabel . ".gol", $gol);
-            $this->db->where_not_in($this->m_tabel . ".form", "1");
-            $this->db->select('*')->from($this->m_tabel);
-            $this->db->join($this->s_tabel, $this->s_tabel . ".id =" . $this->m_tabel . ".form");
-            return $this->db->get()->result();
-        }
-    }
-    public function getMassage($id, $gol)
-    {
-        $this->db->where($this->m_tabel . ".id_user", $id);
-        $this->db->where($this->m_tabel . ".gol", $gol);
-        $this->db->where_not_in($this->m_tabel . ".form", "1");
-        $this->db->select('*')->from($this->m_tabel);
-        $this->db->join($this->s_tabel, $this->s_tabel . ".id =" . $this->m_tabel . ".form");
-        return $this->db->get()->row_array();
-    }
+	public function getAllMassageByGol($gol = null)
+	{
+		if (!$gol) {
+			$this->db->where($this->m_tabel . ".status", "1");
+			$this->db->where_not_in($this->m_tabel . ".form", "1");
+			$this->db->select('*')->from($this->m_tabel);
+			$this->db->join($this->s_tabel, $this->s_tabel . ".id =" . $this->m_tabel . ".form");
+			return $this->db->get()->result();
+		} else {
+			$this->db->where($this->m_tabel . ".gol", $gol);
+			$this->db->where_not_in($this->m_tabel . ".form", "1");
+			$this->db->select('*')->from($this->m_tabel);
+			$this->db->join($this->s_tabel, $this->s_tabel . ".id =" . $this->m_tabel . ".form");
+			return $this->db->get()->result();
+		}
+	}
+	public function getMassage($id, $gol = null)
+	{
+		$this->db->where($this->m_tabel . ".id_user", $id);
+		// $this->db->where($this->m_tabel . ".gol", $gol);
+		$this->db->where_not_in($this->m_tabel . ".form", "1");
+		$this->db->select('*')->from($this->m_tabel);
+		$this->db->join($this->s_tabel, $this->s_tabel . ".id =" . $this->m_tabel . ".form");
+		return $this->db->get()->row_array();
+	}
 
-    public function getJumlahMassages($gol =  null)
-    {
-        if (!$gol) {
-            return $this->db->get($this->m_tabel, ["status" => "1"])->num_rows();
-        } else {
-            return $this->db->get($this->m_tabel, ["gol" => $gol])->num_rows();
-        }
-    }
+	public function getJumlahMassages($gol =  null)
+	{
+		if (!$gol) {
+			$this->db->where("status", "1");
+			$this->db->where_not_in("form", "1");
+			return $this->db->get($this->m_tabel)->num_rows();
+		} else {
+			$this->db->where("gol", $gol);
+			$this->db->where_not_in("form", "1");
+			return $this->db->get($this->m_tabel)->num_rows();
+		}
+	}
 }

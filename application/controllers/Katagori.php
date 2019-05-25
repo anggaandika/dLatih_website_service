@@ -1,5 +1,6 @@
 <?php
 use PhpParser\Builder\Param;
+use function GuzzleHttp\json_decode;
 
 class Katagori extends CI_Controller
 {
@@ -28,6 +29,19 @@ class Katagori extends CI_Controller
 		$this->load->view('--temp/-header', $data);
 		$this->load->view('katagori/list', $data);
 		$this->load->view('--temp/-footer');
+	}
+
+	public function edit()
+	{
+		$id = $this->uri->segment(3);
+		$e = $this->db->where('id_katagori', $id)->get('katagori')->row();
+
+		$kirim['id'] = $e->id_katagori;
+		$kirim['name'] = $e->katagori;
+
+		$this->output
+			->set_content_type('application/json') //fungsi nya ngeset header file biar browser mengenali jenis data
+			->set_output(json_encode($kirim)); //json_encode fungsinya untuk merubah data array ke bentuk json
 	}
 
 	public function input()
