@@ -43,4 +43,15 @@ class m_Massages extends CI_Model
 			return $this->db->get($this->m_tabel)->num_rows();
 		}
 	}
+
+	public function insertM($data)
+	{
+		return $this->db->insert($this->m_tabel, $data);
+	}
+
+	public function read($data, $id)
+	{
+		$this->db->where('id_user', $id);
+		return $this->db->update($this->m_tabel, $data);
+	}
 }

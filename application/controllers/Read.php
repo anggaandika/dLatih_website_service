@@ -12,7 +12,7 @@ class Read extends CI_Controller
 
 		is_logged_in();
 	}
-	public function baca($id)
+	public function lihat($id)
 	{
 		$log = $this->session->userdata('email');
 		//notivikasi
@@ -24,5 +24,14 @@ class Read extends CI_Controller
 		$this->load->view('--temp/-header', $data);
 		$this->load->view('activity/massages/report&feedback/read');
 		$this->load->view('--temp/-footer');
+	}
+
+	public function baca($id)
+	{
+		//update status
+		$update = ['status' => '0'];
+		$this->m->read($update, $id);
+
+		redirect('read/lihat/' . $id);
 	}
 }
